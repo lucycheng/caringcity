@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  #images {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+    margin: 5px;
+    border: 2px solid black;
+
+  }
+
+  img {
+    height: 200px;
+    display: block;
+    margin: 0px auto;
+    vertical-align: middle;
+    max-width: 350px;
+    overflow: hidden;
+  }
+
+  img:hover > .hover {
+  visibility: visible;
+  }
+
+  .hover {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  height: 150px;
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  visibility: hidden;
+  background-color: rgba(0,0,0,0.7);
+
+}
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="images"></div>
+
+<script>
+
+// $(function(){
+//     jQuery('#a-link').remove();   
+    
+//     jQuery('<img alt="" />').attr('id', 'loader').attr('src', 'ajax-loader.gif').appendTo('#image-container');
+    
+//     assign your api key equal to a variable
+
+
+    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    var apiKey = '8aec6026ae8d9cd7d8d902ea3b56b913';
+    var userID = 'me'
+    var url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&format=json&api_key=' + apiKey + '&user_id=' + userID + '?jsoncallback=';
+    
+    //the initial json request to flickr
+    //to get your latest public photos, use this request: http://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=' + apiKey + '&amp;user_id=29096781@N02&amp;per_page=15&amp;page=2&amp;format=json&amp;jsoncallback=?
+    $.getJSON(url, {
+        tags: "paris",
+        // tagmode: "any",
+        // type: "POST",
+        // format: "jsonp"
+    })
+    .done(function(data) {
+
+          console.log(data.items);
+        $.each(data.items, function(i,item) {
+            $("<img>").attr("src", item.media.m).appendTo("#images");
+            if (i===20) {
+                return false;
+            }
+        });
+    });
+});
+
+// function gettingPhotos() {
+
+//     var request = new XMLHttpRequest();
+//     var apiKey = '8aec6026ae8d9cd7d8d902ea3b56b913';
+//     var userID = '129706517@N07'
+//     var url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&format=json&api_key=' + apiKey + '&user_id=' + userID + '?jsoncallback=';
+
+//     request.open('GET', url);
+//     request.send(null);
+
+//     request.onload = function() {
+
+//         if (request.status == 200) {
+//             console.log(request.data);
+//             var a= JSON.parse(request.data);
+//             //console.log(a.items)
+//           }
+//         }
+//       };
+
+//       gettingPhotos();
+
+           
+
+</script>
+
+</body>
+</html>
+
+  

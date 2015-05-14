@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title> Road Trip</title>
+
+    
+ <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+ 
+
+
+
+$.getJSON('http://api.flickr.com/services/rest/?&amp;method=flickr.photos.getInfo&amp;api_key=' + apiKey + '&amp;photo_id=' + photoID + '&amp;format=json&amp;jsoncallback=?',
+    function(data){
+ 
+        //if the image has tags
+        if(data.photo.tags.tag != '') {
+ 
+        //create an empty array to contain all the tags
+        var tagsArr = new Array();
+ 
+        //for each tag, run this function
+        $.each(data.photo.tags.tag, function(j, item){
+ 
+            //push each tag into the empty 'tagsArr' created above
+            tagsArr.push('<a href="http://www.flickr.com/photos/tags/' + item._content + '">' + item.raw + '</a>');
+ 
+            });
+ 
+            //turn the tags array into a string variable
+            var tags = tagsArr.join(', ');
+        }
+
+        
+<script>
+//shorthand for $(document).ready(function(){
+$(function(){
+    jQuery('#a-link').remove();   
+    
+    jQuery('<img alt="" />').attr('id', 'loader').attr('src', 'ajax-loader.gif').appendTo('#image-container');
+    
+    //assign your api key equal to a variable
+    var apiKey = '8aec6026ae8d9cd7d8d902ea3b56b913';
+    
+    //the initial json request to flickr
+    //to get your latest public photos, use this request: http://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=' + apiKey + '&amp;user_id=29096781@N02&amp;per_page=15&amp;page=2&amp;format=json&amp;jsoncallback=?
+    $.getJSON('http://api.flickr.com/services/rest/?&amp;method=flickr.photosets.getPhotos&amp;api_key=' + apiKey + '&amp;photoset_id=129706517@N07&amp;format=json&amp;jsoncallback=?', function() {
+        {
+            tags: $("#tags").val(), 
+            format: "json"
+        },
+ 
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+
+  <div id = "gallery">
+    <div id="wrap">
+      <input id="tags" type="text" name="info" placeholder="where do you want to go?" autocomplete="off">
+      <input type="submit" class = "submit" value="submit" id = "submit">
+      <div id = "pics"></div>
+    </div>
+  </div>
+
+
+</body>
+</html>

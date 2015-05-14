@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Flickr API</title>
+
+  <style>
+
+  #culture_quote {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding: 10px;
+    width: 600px;
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #content {
+    width: 100% - 100px;
+    height: 500px;
+    overflow: scroll;
+    margin: 5px auto;
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+  }
+
+/*  img {
+    height: 200px;
+    display: block;
+    margin: 0px auto;
+    vertical-align: middle;
+    max-width: 300px;
+    overflow: hidden;
+  }*/
+
+  h1 {
+      font: 300 60px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  }
+
+  nav {
+    position: fixed;
+    height: 65px;
+    left: 0;
+    font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    border-left: 2px solid black;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .active {
+    background-color:yellow;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  * {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+#walkthrough {
+  width: 100%;
+  height: 300px;
+    border: 2px solid black;
+    /*position: fixed;
+    margin-bottom: 100px;
+    z-index: 1000;*/
+    background-image: url("../../example_2.jpg");
+    background-image: url("example_2.jpg");
+}
+
+table {
+  margin-left: 100px;
+}
+
+  </style>
+
+  <script src="jquery.lightbox-0.5.min.js"></script>
+  <script src = "urop.js"> </script>
+   <script>
+
+  //   $(function(){
+  //   var sections = {},
+  //       _height  = $(window).height(),
+  //       i        = 0;
+    
+  //   // Grab positions of our sections 
+  //   $('.topic').each(function(){
+  //       sections[this.name] = $(this).offset().top;
+  //   });
+
+  //   $(document).scroll(function(){
+  //       var $this = $(this),
+  //           pos   = $this.scrollTop();
+            
+  //       for(i in sections){
+  //           if(sections[i] > pos && sections[i] < pos + _height){
+  //               $('a').removeClass('active');
+  //               $('#nav_' + i).addClass('active');
+  //           }  
+  //       }
+  //     });
+  //   });
+
+  // </script>
+
+</head>
+<body>
+
+<div id = "walkthrough">
+  
+</div>  
+
+
+ 
+<div id="content">
+  <nav>
+    <ul>
+        <li><a id = "nav_section1" href="#culture">culture</a></li>
+        <li><a id = "nav_section2" href="#mobility">mobility</a></li>
+        <li><a id = "nav_section3" href="#publicspace"> public space </a></li>
+    </ul>    
+</nav> 
+
+
+
+    <table class="tg" id = "culture">
+      <tr>
+          <th class = "tg-031e" colspan = "8"> <h1> culture </h1> </th>
+      </tr>
+      <tr>
+        <td class="tg-031e" colspan="5" rowspan="2"> <img src = "culture/3.jpg" height = "410px"> </td>
+        <td class="tg-031e" colspan="3"> <img src = "culture/1.jpg" height = "200px" width = "300px"> </td>
+      </tr>
+      <tr>
+        <td class="tg-031e" colspan="3"> <img src = "culture/4.jpg" height = "200px" width = "300px" > </td>
+      </tr>
+    </table>
+<!-- 
+    <div id = "culture_quote">
+      This is a quote about culture culture culture culture culturecultureculturecultureculturecultureculturecultureculture cultureculture culture culture culture cultureculture culture culture culture
+    </div> -->
+    </table>
+
+    <table class = "tg">
+      <tr>
+          <th class = "tg-031e" colspan = "3"> <img src = "culture/5.jpg" height = "300px"> </th>
+          <th class = "tg-031e" colspan = "5"> <img src = "culture/2.jpg" 
+            height = "300px"> </th>
+      </tr>
+    </table>
+
+    <button> Interested in learning more about culture? Click here </button> 
+   
+
+    <a name = "section2" class = "topic" id = "mobility">
+       <h1> mobility </h1>
+      <img src = "mobility/1.jpg" height = "500px">
+      <img src = "mobility/2.jpg" height = "500px">
+      <img src = "mobility/3.jpg" height = "500px">
+      <img src = "mobility/4.jpg" height = "500px">
+      <img src = "mobility/5.jpg" height = "500px">
+    </section>
+
+    <a name = "section3" class = "topic" id = "publicspace">
+       <h1> public space </h1>
+      <img src = "public_space/1.jpg" height = "500px">
+      <img src = "public_space/2.jpg" height = "500px">
+      <img src = "public_space/3.jpg" height = "500px">
+      <img src = "public_space/4.jpg" height = "500px">
+      <img src = "public_space/5.jpg" height = "500px">
+    </section>
+</div>
+
+
+
+</body>
+</html>
+
+  

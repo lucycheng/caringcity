@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Flickr API</title>
+
+  <link rel="stylesheet" href="lightbox.jquery.lightbox-0.5.css" 
+    type="text/css" media="screen" />
+  <style>
+
+  .tags {
+    display: block;
+  }
+
+  .tags_toggle {
+    display: none;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .description_toggle {
+    display: block;
+  }
+
+
+  #images {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+    margin: 5px auto;
+    position: absolute;
+  }
+
+img {
+  height: 200px;
+  display: block;
+  margin: 0px auto;
+  vertical-align: middle;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.img_toggle {
+  height: 400px;
+  display: block;
+  margin: 0px auto;
+  vertical-align: middle;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+  .like {
+  border: 1px solid gray;
+  height: 200px;
+  margin: 5px;  
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.like_toggle {
+  border: 1px solid gray;
+  height: 400px;
+  margin: 10px;  
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+/*  .like:hover > .hover {
+  visibility: visible;
+  }*/
+
+  .hover {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  width: 100%;
+  height: 50px;
+  margin-top: 150px;
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+/*  visibility: hidden;*/
+  background-color: rgba(0,0,0,0.7);
+  overflow: hidden;
+  padding-top: 5px;
+  overflow: scroll;
+  }
+
+  .hover_toggle {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  width: 100%;
+  height: 50px;
+  margin-top: 350px;
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+/*  visibility: hidden;*/
+  background-color: rgba(0,0,0,0.7);
+  overflow: hidden;
+  padding-top: 5px;
+  overflow: scroll;
+  }
+
+  .submit {
+  color: black;
+  font-weight: 200;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 140px;
+  margin-bottom: 50px;
+
+  }
+
+  #submit:focus{
+    outline:none;
+  }
+
+  * {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  height: 100%;
+
+}
+
+
+#rapper {
+  width: 100%;
+  height: 300px;
+}
+
+button {
+  font: 16px 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  color: white;
+  border: none;
+  font-weight: 200;
+  background: #345;
+  padding: 5px;
+  margin: 5px;
+  float: center;
+  cursor: pointer;
+}
+
+#buttons {
+  width: 550px;
+  margin: 0px auto;
+  height: 220px;
+  margin-top: -150px;
+  float: center;
+  border: 1px dashed black;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+#buttons h1 {
+  text-align: center;
+}
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script src="jquery.lightbox-0.5.min.js"></script>
+  <script src = "urop.js"> </script>
+
+
+</head>
+<body>
+
+<div id = "rapper">
+  
+</div>  
+
+<div id = "buttons">
+  <h1> Select some tags to begin!</h1>
+</div>
+
+ 
+<div id="images"></div>
+
+
+
+</body>
+</html>
+
+  
